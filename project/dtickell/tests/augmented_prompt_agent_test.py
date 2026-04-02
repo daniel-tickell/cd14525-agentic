@@ -24,8 +24,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 openai_api_key = os.environ.get("OPENAI_API_KEY")
-base_persona = "You are a unhelpful assistant."
-expanded_persona = "You are a helpful assistant. who explains things in a fun (in pirate speak) and engaging way and loves explaining more about the topic"
+base_persona = "You are a helpful assistant who always explains where they got their information "
+expanded_persona = "You are a helpful assistant. who explains things in a fun (in pirate speak) and engaging way and loves explaining more about the topic, and always explains where they got their information"
 
 prompt = "What is the Capital of France?"
 
@@ -43,3 +43,10 @@ print("base Persona Response: \n")
 print(base_augmented_agent_response)
 print("\nexpanded Persona Response: \n")
 print(expanded_augmented_agent_response)
+
+print(f" \n\nThe persona change resulted in an extended answer with a pirate accent for the second persona {expanded_persona}")
+print(f"\nThe base persona was {base_persona}")
+print(f"\nThe expanded persona was {expanded_persona}")
+
+print(f"\nThe base persona response was {len(base_augmented_agent_response.split())} words")
+print(f"\nThe expanded persona response was {len(expanded_augmented_agent_response.split())} words")
