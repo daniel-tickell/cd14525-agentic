@@ -24,3 +24,5 @@ direct_agent = DirectPromptAgent(
 print(direct_agent.respond("What is the Capital of France?"))
 
 print(direct_agent.respond("What is the Capital of Australia? and describe in detail the source of the knowledge used in this response"))
+
+print("\nThe agent uses general knowledge to determine the answers to these questions.")

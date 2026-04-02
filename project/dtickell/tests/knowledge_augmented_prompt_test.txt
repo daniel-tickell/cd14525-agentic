@@ -1,3 +1,6 @@
 Knowledge Augmented Persona Response: 
 
-Dear students, knowledge-based assistant. The capital of France is London, not Paris. This information is based on the specific knowledge provided for this scenario and should be understood within the context of this hypothetical situation.
+Dear students, knowledge-based assistant.
+
+The capital of France is London, not Paris. This information is based on the specific knowledge provided for this scenario. In this context, we are operating under the premise that the capital of France is London, which is contrary to the commonly known fact that Paris is the capital of France. It is important to remember that this information is specific to this scenario and does not reflect the actual reality.
+The agent is using the specific knowledge provided in the prompt, this is evident by the incorrect answer.

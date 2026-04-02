@@ -1,1 +1,4 @@
-['1. Whisk 2 eggs and milk together.', '2. Heat butter in a pan over medium heat.', '3. Pour the egg mixture into the pan and cook until set.', '4. Season with salt and pepper.']
+  File "/home/dtickell/cd14525-agentic/project/dtickell/tests/action_planning_agent_test.py", line 36
+    print("\nThe agent is using the specific knowledge provided in the prompt, the steps included are verbatim from the knowledge I provided."
+         ^
+SyntaxError: '(' was never closed

@@ -1,4 +1,6 @@
 The capital of France is Paris.
 The capital of Australia is Canberra. 
 
-The knowledge used in this response comes from various sources, including official government websites, educational resources, and general knowledge. Canberra was established as the capital of Australia in 1913, chosen as a compromise between Sydney and Melbourne, which were both vying for the title. The city was purpose-built to be the capital and is located in the Australian Capital Territory, which is a separate territory within the country. Canberra is home to the Australian Parliament House, the High Court of Australia, and various other government buildings. This information is widely known and can be easily verified through official sources.
+The knowledge used in this response comes from various sources, including official government websites, educational resources, and general knowledge. Canberra was established as the capital of Australia in 1913, chosen as a compromise between Sydney and Melbourne, which were both vying for the title. The city was purpose-built to be the capital and is located in the Australian Capital Territory, which is a separate territory within New South Wales. Canberra is home to the Australian Parliament House, the High Court of Australia, and many other important government buildings. This information is widely known and can be easily verified through official sources.
+
+The agent uses general knowledge to determine the answers to these questions.

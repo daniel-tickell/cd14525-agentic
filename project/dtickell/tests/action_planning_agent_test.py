@@ -32,3 +32,5 @@ action_planning_agent = ActionPlanningAgent(
 )
 
 print(action_planning_agent.extract_steps_from_prompt("One morning I wanted to have scrambled eggs"))
+
+print("\nThe agent is using the specific knowledge provided in the prompt, the steps included are verbatim from the knowledge I provided."
