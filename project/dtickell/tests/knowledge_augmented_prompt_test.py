@@ -40,4 +40,4 @@ knowledge_augmented_agent_response = KnowledgeAugmentedPromptAgent(
 print("Knowledge Augmented Persona Response: \n")
 print(knowledge_augmented_agent_response)
 
-print("The agent is using the specific knowledge provided in the prompt, this is evident by the incorrect answer.")
+print("/nThe agent is using the specific knowledge provided in the prompt, this is evident by the incorrect answer.")
