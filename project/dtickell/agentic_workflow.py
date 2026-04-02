@@ -11,7 +11,6 @@ from workflow_agents.base_agents import RoutingAgent
 from dotenv import load_dotenv
 load_dotenv()
 openai_api_key = os.environ.get("OPENAI_API_KEY")
-print(f"Key loaded: {openai_api_key}")
 
 # load the product spec
 # Done: 3 - Load the product spec document Product-Spec-Email-Router.txt into a variable called product_spec
@@ -164,27 +163,27 @@ dev_engineer_evaluation_agent = EvaluationAgent(
 
 def product_manager_support_function(query):
     # 1. & 2. Take the input Query and get the response from the respective prompt Agent
-    response = product_manager_knowledge_agent.run(query)
+    response = product_manager_knowledge_agent.respond(query)
     # 3. Evaluate the response using the Evaluation Agent
-    validated_response = product_manager_evaluation_agent.run(response)
+    validated_response = product_manager_evaluation_agent.evaluate(response)
     # 4. return the validate Response
     return validated_response
 
 
 def program_manager_support_function(query):
     # 1. & 2. Take the input Query and get the response from the respective prompt Agent
-    response = program_manager_knowledge_agent.run(query)
+    response = program_manager_knowledge_agent.respond(query)
     # 3. Evaluate the response using the Evaluation Agent
-    validated_response = program_manager_evaluation_agent.run(response)
+    validated_response = program_manager_evaluation_agent.evaluate(response)
     # 4. return the validate Response
     return validated_response
 
 
 def development_engineer_support_function(query):
     # 1. & 2. Take the input Query and get the response from the respective prompt Agent
-    response = development_engineer_knowledge_agent.run(query)
+    response = dev_engineer_knowledge_agent.respond(query)
     # 3. Evaluate the response using the Evaluation Agent
-    validated_response = development_engineer_evaluation_agent.run(response)
+    validated_response = dev_engineer_evaluation_agent.evaluate(response)
     # 4. return the validate Response
     return validated_response
 

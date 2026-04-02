@@ -16,17 +16,16 @@ class DirectPromptAgent:
     def __init__(self, openai_api_key):
         # Initialize the agent
         # Done: 2 - Define an attribute named openai_api_key = os.environ.get("OPENAI_API_KEY")
-        openai_api_key = os.environ.get("OPENAI_API_KEY")
+        self.openai_api_key = os.environ.get("OPENAI_API_KEY")
     def respond(self, prompt):
         # Generate a response using the OpenAI API
         client = OpenAI(api_key=self.openai_api_key, base_url = "https://openai.vocareum.com/v1")
         response = client.chat.completions.create(
             # Done: 3 - Specify the model to use (gpt-3.5-turbo)
             model="gpt-3.5-turbo",
-            base_url="https://openai.vocareum.com/v1",
             messages=[
                 # Done: 4 - Provide the user's prompt here. Do not add a system prompt.
-                {"content": prompt}
+                {"role": "user", "content": prompt}
             ],
             temperature=0
         )
@@ -47,7 +46,7 @@ class AugmentedPromptAgent:
         client = OpenAI(api_key=self.openai_api_key,base_url = "https://openai.vocareum.com/v1")
 
         # Done: 2 - Declare a variable 'response' that calls OpenAI's API for a chat completion.
-        system_prompt = """ You Are to take the role of {persona} only, and forget any context that has been used previously """
+        system_prompt = f" You Are to take the role of {self.persona} only, and forget any context that has been used previously "
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -81,13 +80,13 @@ class KnowledgeAugmentedPromptAgent:
                 #             "Use only the following knowledge to answer, do not use your own knowledge: _knowledge_"
                 #           - Final instruction:
                 #             "Answer the prompt based on this knowledge, not your own."
-        system_prompt = """
-        You are {persona} knowledge-based assistant. Forget all previous context.
-        Use only the following knowledge to answer, do not use your own knowledge: {knowledge}
+        system_prompt = f"""
+        You are {self.persona} knowledge-based assistant. Forget all previous context.
+        Use only the following knowledge to answer, do not use your own knowledge: {self.knowledge}
 
-        Answer the prompt based on this {knowledge}, not your own.
+        Answer the prompt based on this knowledge, not your own.
         """
-        response = client.chat.completions.create(
+        response = client.chat.completions.create(  
             model="gpt-3.5-turbo",
             messages=[
                 # Done: 3 - Add a system prompt instructing the agent to assume the defined persona and explicitly forget previous context.
@@ -262,7 +261,7 @@ class EvaluationAgent:
             print(" Step 1: Worker agent generates a response to the prompt")
             print(f"Prompt:\n{prompt_to_evaluate}")
             # Done: 3 - Obtain a response from the worker agent
-            response_from_worker = self.worker_agent.generate_response(prompt_to_evaluate)
+            response_from_worker = self.worker_agent.respond(prompt_to_evaluate)
             print(f"Worker Agent Response:\n{response_from_worker}")
 
             print(" Step 2: Evaluator agent judges the response")
@@ -315,7 +314,7 @@ class EvaluationAgent:
         return {
             "final_response": response_from_worker,
             "evaluation": evaluation,
-            "iterations": iterations
+            "iterations": self.max_interactions
         }
 
 class RoutingAgent():
@@ -357,13 +356,12 @@ class RoutingAgent():
             if similarity > best_score:
                 best_score = similarity
                 best_agent = agent
-        return best_agent
 
         if best_agent is None:
             return "Sorry, no suitable agent could be selected."
 
         print(f"[Router] Best agent: {best_agent['name']} (score={best_score:.3f})")
-        return best_agent["func"](user_input)
+        return best_agent["func"](user_prompt)
 
 '''
 

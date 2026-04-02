@@ -1,0 +1,1 @@
+['1. Whisk 2 eggs and milk together.', '2. Heat butter in a pan over medium heat.', '3. Pour the egg mixture into the pan and cook until set.', '4. Season with salt and pepper.']
