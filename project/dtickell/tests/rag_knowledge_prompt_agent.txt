@@ -1,0 +1,16 @@
+Loading knowledge from /home/dtickell/cd14525-agentic/project/dtickell/tests/Product-Spec-Email-Router.txt...
+Chunking knowledge...
+Calculating embeddings (this may take a moment)...
+
+Querying Agent with: What are the primary objectives of the Email Router and what is the target for reducing response time? and explain where you got this information
+
+--- Agent Response #1 ---
+The primary objectives of the Email Router are to reduce response time, increase efficiency, and improve routing accuracy. The target for reducing response time is to decrease the average email response time by 60% within three months of full implementation. This information is based on the provided documentation that outlines the objectives of the Email Router product specification.
+
+Querying Agent with: What else does the Email Router need to factor in as a product? and explain where you got this information
+
+--- Agent Response #2 ---
+The Email Router product needs to factor in the ability to prioritize urgent messages and escalate them to the appropriate personnel for timely responses. This information is derived from the provided prompt, which highlights the issue of inconsistency in response quality and timing due to manual handling and forwarding of messages. By incorporating a feature that can identify and prioritize urgent messages, the Email Router can ensure that critical inquiries receive prompt attention, improving overall response quality and efficiency.
+
+Cleaning up temporary files...
+Done.
